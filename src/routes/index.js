@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
+import { Switch, BrowserRouter } from 'react-router-dom';
 import Route from './Route'
 
 
@@ -11,12 +11,14 @@ import Profile from '~/pages/Profile';
 
 export default function Routes() {
     return (
-        <Switch>
-            <Route path="/" exact component={SignIn} />
-            <Route path="/register" component={SignUp} />
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/"  component={SignIn} />
+                <Route exact path="/register" component={SignUp} />
 
-            <Route path="/dashboard" component={Dashboard} isPrivate />
-            <Route path="/profile" component={Profile} isPrivate />
-        </Switch>
+                <Route exact path="/dashboard" component={Dashboard} isPrivate />
+                <Route exact path="/profile" component={Profile} isPrivate />
+            </Switch>
+        </BrowserRouter>
     )
 }
