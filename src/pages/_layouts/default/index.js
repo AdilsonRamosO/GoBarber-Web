@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 import { Wrapper } from './styles';
 
-export default function DefaultLayot({ children }) {
+export default function DefaultLayout({ children }) {
   return <Wrapper>{children}</Wrapper>
   
 }
 
-DefaultLayot.propTypes = {
+DefaultLayout.propTypes = {
     children: PropTypes.element.isRequired,
 };
