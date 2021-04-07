@@ -7,7 +7,7 @@ import { Container } from './styles'
 export default function AvatarInput() {
   const { defaultValue, registerField } = useField('avatar')
 
-  const [file, setFile] = useState(defaultValue && defaultValue.url)
+  const [file, setFile] = useState(defaultValue && defaultValue.id)
   const [preview, setPreview] = useState(defaultValue && defaultValue.url)
 
   const ref = useRef()
@@ -43,11 +43,12 @@ export default function AvatarInput() {
             preview ||
             'https://avatars.githubusercontent.com/u/37906413?s=400&v=4'
           }
-          alt=""
+          alt="Foto de perfil"
         />
 
         <input
           type="file"
+          name=""
           id="avatar"
           accept="image/*"
           data-file={file}
